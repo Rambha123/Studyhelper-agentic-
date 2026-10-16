@@ -1,9 +1,12 @@
-SAMPLE NOTES - replace these files with your own course notes.
 
-A primary key uniquely identifies each row in a table and cannot be NULL. A foreign key references a primary key in another table and enforces referential integrity.
+How Databases Work
 
-Normalization reduces redundancy. First normal form requires atomic values. Second normal form removes partial dependencies on a composite key. Third normal form removes transitive dependencies between non-key attributes.
+• Database Management System (DBMS): Software that acts as an intermediary between users and the raw data, allowing entry, storage, retrieval, and updates.
+• Queries: Commands (often written in languages like SQL) used to search, filter, and modify stored records.
+• ACID Properties: Rules (atomicity, consistency, isolation, durability) that ensure reliable and accurate data transactions.
 
-ACID properties: Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (concurrent transactions do not interfere), Durability (committed data survives crashes).
+Common Types of Databases
 
-An index speeds up reads on the indexed columns but slows down writes and uses extra storage. Use indexes on columns frequently used in WHERE, JOIN, and ORDER BY clauses.
+• Relational Databases (SQL): Store data in structured tables with rows and columns, linked by primary and foreign keys (e.g., MySQL, PostgreSQL, Microsoft SQL Server).
+• Non-Relational Databases (NoSQL): Designed for unstructured or semi-structured data, using document, key-value, or graph formats (e.g., MongoDB).
+• Cloud Databases: Hosted on virtualized infrastructure and managed via cloud providers (often delivered as Database-as-a-Service, or DBaaS)

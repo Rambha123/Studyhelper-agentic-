@@ -1,9 +1,12 @@
-SAMPLE NOTES - replace these files with your own course notes.
 
-Overfitting happens when a model learns noise in the training data and performs poorly on unseen data. Signs: very high training accuracy but much lower validation accuracy. Remedies: more data, regularization (L1/L2), simpler models, early stopping, dropout, and cross-validation.
+Core Conditions
 
-Precision is the share of predicted positives that are truly positive. Recall is the share of actual positives that were found. F1 is the harmonic mean of precision and recall. On imbalanced data such as churn, accuracy can be misleading, so prefer F1 and ROC-AUC.
+To be classified as NP-complete, a problem must meet two strict criteria:
+• In NP (Nondeterministic Polynomial): If you are given a proposed solution (a certificate), a computer can check or verify if it is correct in polynomial time.
+• NP-Hard: Every other problem in NP can be transformed (reduced) into this problem in polynomial time.
 
-Gradient descent updates parameters in the direction that reduces the loss. The learning rate controls step size: too large and training diverges, too small and it converges slowly. Mini-batch gradient descent balances speed and stability.
+Key Characteristics
 
-Bias-variance tradeoff: high bias means underfitting (model too simple); high variance means overfitting (model too sensitive to training data). Good models balance the two.
+• No Known Fast Solutions: There is no known algorithm that can solve NP-complete problems quickly (in polynomial time) for all cases. As the input size grows, the time required typically scales exponentially.
+• All-or-Nothing Property: If anyone ever finds a fast, polynomial-time algorithm for even a single NP-complete problem, it would mean that all problems in NP can be solved quickly (proving that P = NP).
+• The P vs. NP Debate: Most computer scientists and mathematicians have a consensus (as noted by discussions on Reddit) that P ≠ NP, meaning these problems are fundamentally hard to solve.
