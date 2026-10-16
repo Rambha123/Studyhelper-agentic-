@@ -1,0 +1,12 @@
+
+How Databases Work
+
+• Database Management System (DBMS): Software that acts as an intermediary between users and the raw data, allowing entry, storage, retrieval, and updates.
+• Queries: Commands (often written in languages like SQL) used to search, filter, and modify stored records.
+• ACID Properties: Rules (atomicity, consistency, isolation, durability) that ensure reliable and accurate data transactions.
+
+Common Types of Databases
+
+• Relational Databases (SQL): Store data in structured tables with rows and columns, linked by primary and foreign keys (e.g., MySQL, PostgreSQL, Microsoft SQL Server).
+• Non-Relational Databases (NoSQL): Designed for unstructured or semi-structured data, using document, key-value, or graph formats (e.g., MongoDB).
+• Cloud Databases: Hosted on virtualized infrastructure and managed via cloud providers (often delivered as Database-as-a-Service, or DBaaS)
