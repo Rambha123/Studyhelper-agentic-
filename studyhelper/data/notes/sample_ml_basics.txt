@@ -1,0 +1,9 @@
+SAMPLE NOTES - replace these files with your own course notes.
+
+Overfitting happens when a model learns noise in the training data and performs poorly on unseen data. Signs: very high training accuracy but much lower validation accuracy. Remedies: more data, regularization (L1/L2), simpler models, early stopping, dropout, and cross-validation.
+
+Precision is the share of predicted positives that are truly positive. Recall is the share of actual positives that were found. F1 is the harmonic mean of precision and recall. On imbalanced data such as churn, accuracy can be misleading, so prefer F1 and ROC-AUC.
+
+Gradient descent updates parameters in the direction that reduces the loss. The learning rate controls step size: too large and training diverges, too small and it converges slowly. Mini-batch gradient descent balances speed and stability.
+
+Bias-variance tradeoff: high bias means underfitting (model too simple); high variance means overfitting (model too sensitive to training data). Good models balance the two.

@@ -1,0 +1,9 @@
+SAMPLE NOTES - replace these files with your own course notes.
+
+A primary key uniquely identifies each row in a table and cannot be NULL. A foreign key references a primary key in another table and enforces referential integrity.
+
+Normalization reduces redundancy. First normal form requires atomic values. Second normal form removes partial dependencies on a composite key. Third normal form removes transitive dependencies between non-key attributes.
+
+ACID properties: Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (concurrent transactions do not interfere), Durability (committed data survives crashes).
+
+An index speeds up reads on the indexed columns but slows down writes and uses extra storage. Use indexes on columns frequently used in WHERE, JOIN, and ORDER BY clauses.
