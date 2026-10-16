@@ -76,3 +76,12 @@ API: `GET /health`, `POST /ingest`, `POST /ask`, `POST /chat`, `POST /study-card
 The compose stack runs anywhere Docker runs. For a cloud VM: install Docker, copy the repo and a `.env`,
 run `docker compose up -d --build`, and open ports 8501 (UI) and 8080 (API). Keep the API key in the
 environment, never in the image.
+1. In a new PowerShell window, go to the studyhelper folder and check .env has your key and the new model names.
+2. Run:
+   powershell
+   docker compose up --build
+
+
+3. Open http://localhost:8501. Click “Index notes folder”, then ask a question.
+4. Take screenshots of the app working and of the terminal. Put them in a docs/ folder.
+5. Stop it with Ctrl+C, then docker compose down.
