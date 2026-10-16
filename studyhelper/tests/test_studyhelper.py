@@ -90,10 +90,27 @@ def test_tool_loop_calls_tool_then_answers():
     tc = NS(id="1", function=NS(name="calculate", arguments=json.dumps({"expression": "2+2"})),
             model_dump=lambda: {"id": "1", "type": "function",
                                 "function": {"name": "calculate", "arguments": '{"expression": "2+2"}'}})
-    llm = FakeLLM([_resp(tool_calls=[tc]), _resp(content="The answer is 4")])
+    verify_ok = json.dumps({"decision": "ACCEPT", "reason": "Verified", "revised_answer": "", "search_query": ""})
+    llm = FakeLLM([_resp(tool_calls=[tc]), _resp(content="The answer is 4"), _resp(content=verify_ok)])
     out = Assistant(llm, make_rag(llm)).chat("2+2?")
     assert out["answer"] == "The answer is 4"
     assert out["tool_trace"][0]["result"] == "4"
+
+
+def test_failure_injection_handling():
+    import studyhelper.tools as tools_mod
+    tools_mod.INJECT_FAILURE_FLAG = True
+    try:
+        tc = NS(id="1", function=NS(name="calculate", arguments=json.dumps({"expression": "2+2"})),
+                model_dump=lambda: {"id": "1", "type": "function",
+                                    "function": {"name": "calculate", "arguments": '{"expression": "2+2"}'}})
+        verify_ok = json.dumps({"decision": "ACCEPT", "reason": "Verified error response", "revised_answer": "", "search_query": ""})
+        llm = FakeLLM([_resp(tool_calls=[tc]), _resp(content="The tool service is unavailable."), _resp(content=verify_ok)])
+        out = Assistant(llm, make_rag(llm)).chat("2+2?")
+        assert "unavailable" in out["answer"]
+        assert "error" in out["tool_trace"][0]["result"]
+    finally:
+        tools_mod.INJECT_FAILURE_FLAG = False
 
 
 def test_tool_loop_stops_at_limit():

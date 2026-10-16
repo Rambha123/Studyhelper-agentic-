@@ -61,7 +61,12 @@ TOOL_SCHEMAS = [
 ]
 
 
+INJECT_FAILURE_FLAG = False
+
+
 def run_tool(name: str, args: dict, rag=None) -> str:
+    if INJECT_FAILURE_FLAG:
+        return "error: simulated downstream service failure / tool timeout"
     if name == "calculate":
         return calculate(args.get("expression", ""))
     if name == "study_plan":
